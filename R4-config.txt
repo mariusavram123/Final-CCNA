@@ -1,0 +1,118 @@
+hostname R4
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username R2 password 0 cisco
+username R3 password 0 cisco
+username marius secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip domain-name core.ccna.com
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 209.165.200.225 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/1/0
+ ip address 203.0.113.10 255.255.255.252
+ encapsulation ppp
+ ppp authentication chap
+ clock rate 2000000
+!
+interface Serial0/1/1
+ ip address 203.0.113.14 255.255.255.252
+ encapsulation ppp
+ ppp authentication chap
+!
+interface Serial0/2/0
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial0/2/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ redistribute bgp 400 metric 110 
+ network 209.165.200.224 0.0.0.3 area 0
+!
+router bgp 400
+ bgp log-neighbor-changes
+ no synchronization
+ neighbor 203.0.113.9 remote-as 300
+ neighbor 203.0.113.9 next-hop-self 
+ neighbor 203.0.113.13 remote-as 200
+ neighbor 203.0.113.13 next-hop-self 
+ network 209.165.200.224 mask 255.255.255.252
+ network 203.0.113.12 mask 255.255.255.252
+ network 203.0.113.8 mask 255.255.255.252
+ redistribute ospf 1 
+!
+ip classless
+ip route 203.0.113.0 255.255.255.252 203.0.113.9 
+ip route 203.0.113.4 255.255.255.252 203.0.113.13 
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ logging synchronous
+ login local
+!
+!
+!

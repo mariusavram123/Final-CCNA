@@ -1,0 +1,116 @@
+hostname R3
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username R1 password 0 cisco
+username R4 password 0 cisco
+username marius secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip domain-name core.ccna.com
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 209.165.202.1 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/1/0
+ ip address 203.0.113.9 255.255.255.252
+ encapsulation ppp
+ ppp authentication chap
+!
+interface Serial0/1/1
+ ip address 203.0.113.2 255.255.255.252
+ encapsulation ppp
+ ppp authentication chap
+!
+interface Serial0/2/0
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial0/2/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router bgp 300
+ bgp log-neighbor-changes
+ no synchronization
+ neighbor 203.0.113.1 remote-as 100
+ neighbor 203.0.113.1 next-hop-self 
+ neighbor 203.0.113.10 remote-as 400
+ neighbor 203.0.113.10 next-hop-self 
+ network 209.165.202.0 mask 255.255.255.252
+ network 203.0.113.0 mask 255.255.255.252
+ network 203.0.113.8 mask 255.255.255.252
+ redistribute static 
+!
+ip classless
+ip route 203.0.113.4 255.255.255.252 203.0.113.1 
+ip route 203.0.113.12 255.255.255.252 203.0.113.10 
+ip route 0.0.0.0 0.0.0.0 203.0.113.10 
+ip route 0.0.0.0 0.0.0.0 203.0.113.1 100
+!
+ip flow-export version 9
+!
+!
+!
+no cdp run
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ logging synchronous
+ login local
+!
+!
+!

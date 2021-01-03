@@ -1,0 +1,13 @@
+
+
+enable
+conf t
+username marius secret cisco
+ip domain-name data.ccna.com
+crypto key generate rsa 
+2048
+ip ssh version 2
+line vty 0 4
+login local
+transport input all
+logging synchronous
