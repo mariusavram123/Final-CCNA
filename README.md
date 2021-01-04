@@ -21,7 +21,7 @@ The Core routers run BGP in different autonomous systems which will enable conne
 
 Company A:
 
-- All PC's in the Company A are in the same VLAN(subnet).
+- All PCs in the Company A are in the same VLAN(subnet).
 - The routers CA-CORE1 and CA-CORE2 run an HSRP group to provide redundant gateways to client in the network
 - Use static and default routes to enable connectivity with the WAN.
 - Clients have static IP addresses.
