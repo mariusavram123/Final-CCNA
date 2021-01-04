@@ -28,14 +28,14 @@ Company A:
 - Uses the collapsed core network design architecture
 
 Company B:
-- The company is using 6 VLAN's for internal data traffic and the VLAN 70 as a management VLAN for the network.
+- The company is using 6 VLANs for internal data traffic and the VLAN 70 as a management VLAN for the network.
 - Uses EIGRP as an internal routing protocol
 - The core switch 2(CS2) acts as a layer 3 inter-vlan routing device
 - The CS2 switch also have predetermined DHCP pools for all VLAN's in the company.
 - Uses the Three-Tier network design architecture.
 
 Company C:
-- The PC's in the Company B are divided into 4 VLANs. VLAN 40 is used for network management and it is used as a native VLAN for the trunk links. The VLAN's 10, 20, and 30 is used for data traffic.
+- The PCs in the Company C are divided into 4 VLANs. VLAN 40 is used for network management and it is used as a native VLAN for the trunk links. The VLANs 10, 20, and 30 are used for data traffic.
 - The CC-CORE, company's core router acts as a router-on-a-stick and enable inter-vlan communication.
 - Use static routes for connectivity with the WAN.
 - Clients have static IP addresses, for every VLAN in the company
@@ -97,7 +97,7 @@ Company B:
 
 - Configure IP addresses as per diagram.
 - You have been allocated the 192.168.2.0/24 range by your ISP to assign on the hosts and network devices of the company, subnet it for your need without wasting addresses. You need minimum 20 addresses for each VLAN
-- configure VLAN's on all the switches (VLAN 10 to 70) and subnet the IP address range allocated by your ISP. Note that you need another subnet for the connection with the WAN router
+- configure VLANs on all the switches (VLAN 10 to 70) and subnet the IP address range allocated by your ISP. Note that you need another subnet for the connection with the WAN router
 - VLAN 70 is used as a management VLAN for network devices and hosts, configure it as native VLAN for the trunk links in the network.
 - Configure the trunk links where needed, disable DTP negotiations and set VLAN 70 as native VLAN
 - Configure CS2 as the spanning-tree root bridge for all VLANs and the CS1 switch as a secondary root for all VLAN's
