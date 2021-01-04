@@ -1,0 +1,14 @@
+vlan 10
+name VLAN_10
+vlan 20
+name VLAN_20
+vlan 30
+name VLAN_30
+vlan 40
+name VLAN_40
+vlan 50
+name VLAN_50
+vlan 60
+name VLAN_60
+vlan 70
+name Management
