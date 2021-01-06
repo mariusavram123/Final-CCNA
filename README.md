@@ -1,7 +1,7 @@
 README.md
 
 This is the documentation for my Final CCNA project.
-* This project needs a bit more technologies than their are described in the CCNA 200-301 Cisco's Exam Blueprint:Route redistributions, Point-to-Point Protocol with CHAP authentication.
+* This project uses a bit more technologies than their are described in the CCNA 200-301 Cisco's Exam Blueprint:Route redistributions, Point-to-Point Protocol with CHAP authentication.
 
 This project has been build using the Cisco Packet Tracer simulator. You need to have Cisco Packet Tracer installed in order to open the .pkt file provided in this folder.
 
