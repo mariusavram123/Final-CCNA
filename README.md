@@ -134,20 +134,20 @@ Data Center
 
 - The data center design resides in Cisco's Spine-Leaf architecture
 - The ports between the switches runs as layer 3 ports and they are using public IP addresses
-- Configure IP addressing as follows: /t/r
-    DC-SS1 -> DC-LS1 11.0.0.0/30 /t/r
-    DC-SS1 -> DC-LS2 12.0.0.0/30 /t/r
-    DC-SS1 -> DC-LS3 13.0.0.0/30 /t/r
-    DC-SS2 -> DC-LS1 21.0.0.0/30 /t/r
-    DC-SS2 -> DC-LS2 22.0.0.0/30 /t/r
-    DC-SS2 -> DC-LS3 23.0.0.0/30 /t/r
-    DC-SS2 -> DC-LS3 23.0.0.0/30 /t/r
-    DC-SS3 -> DC-LS1 31.0.0.0/30 /t/r
-    DC-SS3 -> DC-LS2 32.0.0.0/30 /t/r
-    DC-SS3 -> DC-LS3 33.0.0.0/30 /t/r
-    DC-LS1- G1/0/10 14.0.0.0/30- DNS Server /t/r
-    DC-LS2- G1/0/10 15.0.0.0/30- google.com server /t/r
-    DC-LS3- G1/0/10 16.0.0.0/30- cisco.com server /t/r
+- Configure IP addressing as follows:
+    -DC-SS1 -> DC-LS1 11.0.0.0/30
+    -DC-SS1 -> DC-LS2 12.0.0.0/30
+    -DC-SS1 -> DC-LS3 13.0.0.0/30
+    -DC-SS2 -> DC-LS1 21.0.0.0/30
+    -DC-SS2 -> DC-LS2 22.0.0.0/30
+    -DC-SS2 -> DC-LS3 23.0.0.0/30
+    -DC-SS2 -> DC-LS3 23.0.0.0/30
+    -DC-SS3 -> DC-LS1 31.0.0.0/30
+    -DC-SS3 -> DC-LS2 32.0.0.0/30
+    -DC-SS3 -> DC-LS3 33.0.0.0/30
+    -DC-LS1- G1/0/10 14.0.0.0/30- DNS Server
+    -DC-LS2- G1/0/10 15.0.0.0/30- google.com server
+    -DC-LS3- G1/0/10 16.0.0.0/30- cisco.com server
 - Enable IP routing on switches
 - Enable OSPF process ID 1 for all the switches inside the data center and on the Data Center router
 - Configure the IP address on the G0/0/0 interface of the Data Center router using the diagram
