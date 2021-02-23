@@ -60,6 +60,7 @@ The network devices should also be able to ping the DNS server at 14.0.0.2 and t
 
 Technologies used:
 
+```
 - Spanning-tree optimizations
 - SSH and Telnet
 - EtherChannel
@@ -74,10 +75,12 @@ Technologies used:
 - EIGRP
 - PPP with CHAP authentication
 - Route Redistributions
+```
 
 Objective descriptions:
 
 Company A:
+```
 (CCNA-CA-Screenshoot.jpg)
 
 - Configure IP addressing as per diagram. The company is using 192.168.1.0/24 as the internal subnet and 198.51.100.0/30 and 198.51.100.4/30 for WAN link connectivity
@@ -91,8 +94,10 @@ Company A:
 - Configure NAT/PAT on CA-CORE1 and CA-CORE2 routers and permit all hosts in the subnet 192.168.1.0/24 to be translated to the IP address existent on G0/0/0 interfaces of routers
 - Configure static routes so that internal routers can perform HSRP(the two routers have connectivity), and a default route to reach the internet.
 - Activate SSH version 2 for management
+```
 
 Company B:
+```
 (CCNA-CB-Screenshoot.jpg)
 
 - Configure IP addresses as per diagram.
@@ -109,8 +114,10 @@ Company B:
 - Activate EIGRP in the Autonomous System 200 on the CB-CORE router and CS2 and advertise all internal VLAN routes and the network between CS2 and CB-CORE router in it.
 - Configure NAT/PAT translations and allow all the subnetworks in the 192.168.2.0/24 network to be translated on the IP addressed configured on the G 0/0/0 interface's configured IP address. Enable Overloading.
 - Activate SSH version 2 for management
+```
 
 Company C:
+```
 (CCNA-CC-Screenshoot.jpg)
 
 - Configure IP addresses as per diagram.
@@ -128,13 +135,16 @@ Company C:
 - Configure NAT/PAT on the CC-CORE router subinterfaces to translate the internal IP addresses into the G0/0/0 interface's IP address
 - Configure a management IP address and activate SSH version 2 for the management of networking devices in the internal network
 - Configure a default static route for the network traffic.
+```
 
 Data Center
+```
 (Final-CCNA-DC-screenshoot.jpg)
 
 - The data center design resides in Cisco's Spine-Leaf architecture
 - The ports between the switches runs as layer 3 ports and they are using public IP addresses
 - Configure IP addressing as follows:
+```
 - DC-SS1 -> DC-LS1 11.0.0.0/30
 - DC-SS1 -> DC-LS2 12.0.0.0/30
 - DC-SS1 -> DC-LS3 13.0.0.0/30
@@ -154,8 +164,11 @@ Data Center
 - Configure a default static route pointing to the ISP router R4 and insert it into OSPF process ID.
 - Enable the DNS service on the 14.0.0.2 server and configure IP addressing
 - Enable the HTTP and HTTPS services on the 15.0.0.2 and 16.0.0.2 servers and configure IP addressing
+```
+```
 
 BGP Core routers:
+```
 (Final-CCNA-BGP-CORE-screenshoot.jpg)
 
 The BGP core routers R1, R2, R3 and R4 run BGP in different autonomous systems.
@@ -170,12 +183,15 @@ To enable the connection, the routers are using static routes.
 - On router R3 redistribute the static routes from the 209.165.202.0/30 and the default routes from the router, into BGP process for AS 300
 - On router R4 redistribute the OSPF process ID 1 onto BGP for AS 400 so that all BGP neighbors will learn about the data center networks.
 - Enable SSH v2 on all BGP Core routers so that they can be accessed for management.
+```
 
-Final test and verifying the connectivity
+Final test and verifying the connectivity:
+```
 
 - Open a PC's command prompt, from Company A, Company B or Company C and ping 14.0.0.2(DNS server)
 - Ping 15.0.0.2 and 16.0.0.2 servers by using domain names(google.com and cisco.com)
 - Open an web browser on the pc and browse to google.com and cisco.com. 
 - Using a PC, the hosts should be able to ssh into the routers and switches in the topology.
+```
 
 Bugs and other features will be resolved/added in later builds of the project.
