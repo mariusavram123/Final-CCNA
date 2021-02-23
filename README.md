@@ -144,27 +144,25 @@ Data Center
 - The data center design resides in Cisco's Spine-Leaf architecture
 - The ports between the switches runs as layer 3 ports and they are using public IP addresses
 - Configure IP addressing as follows:
-```
-- DC-SS1 -> DC-LS1 11.0.0.0/30
-- DC-SS1 -> DC-LS2 12.0.0.0/30
-- DC-SS1 -> DC-LS3 13.0.0.0/30
-- DC-SS2 -> DC-LS1 21.0.0.0/30
-- DC-SS2 -> DC-LS2 22.0.0.0/30
-- DC-SS2 -> DC-LS3 23.0.0.0/30
-- DC-SS2 -> DC-LS3 23.0.0.0/30
-- DC-SS3 -> DC-LS1 31.0.0.0/30
-- DC-SS3 -> DC-LS2 32.0.0.0/30
-- DC-SS3 -> DC-LS3 33.0.0.0/30
-- DC-LS1- G1/0/10 14.0.0.0/30- DNS Server
-- DC-LS2- G1/0/10 15.0.0.0/30- google.com server
-- DC-LS3- G1/0/10 16.0.0.0/30- cisco.com server
+* DC-SS1 -> DC-LS1 11.0.0.0/30
+* DC-SS1 -> DC-LS2 12.0.0.0/30
+* DC-SS1 -> DC-LS3 13.0.0.0/30
+* DC-SS2 -> DC-LS1 21.0.0.0/30
+* DC-SS2 -> DC-LS2 22.0.0.0/30
+* DC-SS2 -> DC-LS3 23.0.0.0/30
+* DC-SS2 -> DC-LS3 23.0.0.0/30
+* DC-SS3 -> DC-LS1 31.0.0.0/30
+* DC-SS3 -> DC-LS2 32.0.0.0/30
+* DC-SS3 -> DC-LS3 33.0.0.0/30
+* DC-LS1- G1/0/10 14.0.0.0/30- DNS Server
+* DC-LS2- G1/0/10 15.0.0.0/30- google.com server
+* DC-LS3- G1/0/10 16.0.0.0/30- cisco.com server
 - Enable IP routing on switches
 - Enable OSPF process ID 1 for all the switches inside the data center and on the Data Center router
 - Configure the IP address on the G0/0/0 interface of the Data Center router using the diagram
 - Configure a default static route pointing to the ISP router R4 and insert it into OSPF process ID.
 - Enable the DNS service on the 14.0.0.2 server and configure IP addressing
 - Enable the HTTP and HTTPS services on the 15.0.0.2 and 16.0.0.2 servers and configure IP addressing
-```
 ```
 
 BGP Core routers:
@@ -186,8 +184,8 @@ To enable the connection, the routers are using static routes.
 ```
 
 Final test and verifying the connectivity:
-```
 
+```
 - Open a PC's command prompt, from Company A, Company B or Company C and ping 14.0.0.2(DNS server)
 - Ping 15.0.0.2 and 16.0.0.2 servers by using domain names(google.com and cisco.com)
 - Open an web browser on the pc and browse to google.com and cisco.com. 
